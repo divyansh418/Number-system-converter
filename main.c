@@ -33,7 +33,7 @@ while (num != 0) {
 printf("Your answer: ");
 for (int i = count - 1; i >= 0; i--) {
         if(a[i]>=0){
-  if (a[i]<= 10){
+  if (a[i]< 10){
     printf("%d", a[i]);}
 else
     {printf("%c", 'A' + (a[i] - 10));}
@@ -42,7 +42,7 @@ else
                 if(i==count-1){printf("-");}
 
     negative_handle = a[i]*-1;
-  if (negative_handle <= 10){
+  if (negative_handle < 10){
     printf("%d", negative_handle );}
 else
     {printf("%c", 'A' + (negative_handle - 10));}
