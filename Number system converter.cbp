@@ -30,6 +30,7 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add option="-D__USE_MINGW_ANSI_STDIO=1" />
 		</Compiler>
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
