@@ -1,6 +1,7 @@
 # depslib dependency file v1.0
-1792995116 source:e:\my\c\number system converter\number system converter\main.c
+1793000550 source:e:\my\c\number system converter\number system converter\main.c
 	<stdio.h>
 	<limits.h>
 	<float.h>
+	<math.h>
 
