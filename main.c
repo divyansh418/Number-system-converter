@@ -60,9 +60,6 @@ int main() {
         }
     }
     else if(selecter_screen_1==2){
-            printf("my code can not handle any numbers who's fraction give repeting value on multiplecation in other word it can not handle never ending fraction part so if the code did not stop press ctrl+c on pc and on phone just terminat the code idk how to do it on phon so you are on your own for that part if you arggre to this press 1 to continue i will fix that part soon\n");
-    scanf("%lld",&selecter_screen_2);
-            if(selecter_screen_2==1){
         long long num;
         long long quotient, remainder;
         long double quotient1, remainder1;
@@ -121,14 +118,23 @@ int main() {
            decimal, quotient1, remainder);
 
         decimal = quotient1-remainder;
-       // for(int ab=0;ab<count1;ab++){
-           // for(int abc=0;abc<count1;abc++){
-             //   if(c[ab]==c[abc]){goto skip;
-
-            //}
-        //}
+        for(int ab=0;ab<count1;ab++){
+            for(int abc=0;abc<count1;abc++){
+                if(c[ab]==c[abc]){goto skip;
+            }
+        }
          }
-       //  skip:
+             }
+         skip:{ quotient1 =decimal*radix;
+            remainder=(long long)quotient1;
+            b[count1] = remainder;
+        count1++;
+        c[count2]=decimal;
+        count2++;
+
+        printf("N = %Lf,M = %Lf, C= %lld\n",
+           decimal, quotient1, remainder);
+}
 
           printf("Your answer: ");
         for (int i = count - 1; i >= 0; i--) {
@@ -176,8 +182,10 @@ int main() {
             }
 
     }
-    }
 
     else {printf("sorry i am still working on it coming soon");}
     return 0;
 }
+
+
+
