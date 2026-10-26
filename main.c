@@ -1,13 +1,21 @@
 #include <stdio.h>
 #include<limits.h>
 #include<float.h>
+#include<math.h>
+#include<string.h>
+int digitValue(char c){
+    if(c>='0' && c<='9') return c-'0';
+    if(c>='A' && c<='F') return c-'A'+10;
+    if(c>='a' && c<='f') return c-'a'+10;
+    return -1;   // invalid digit
+}
 int main() {
 
     long long selecter_screen_1;
     long long selecter_screen_2;
     printf("press 1 to convert integer decimal number into other number integer system\n");
     printf("press 2 to convert decimal number into other number system\n");
-    printf("press 3 to know what if i want to covert other then integer decimal number\n");
+    printf("press 3 to convert any integer number system back into integer decimal\n");
     scanf("%lld",&selecter_screen_1);
     if(selecter_screen_1==1){
         long long num;
@@ -182,8 +190,42 @@ int main() {
             }
 
     }
+    else if(selecter_screen_1==3){
+    printf("Enter your number you want to convert\n");
+    char s[65];
+    scanf("%64s", s);
 
-    else {printf("sorry i am still working on it coming soon");}
+    int radix;
+    printf("Enter a your number system radix your number is in \n");
+    for(;;){
+        scanf("%d",&radix);
+        if(radix>=2 && radix<=16){break;}
+        else{printf("radix must be between 2 and 16\n");}
+    }
+
+    long long count=0;
+    long long a[64];
+    long double answer1;
+    long double answer2=0;
+
+    int len = strlen(s);
+    for(int i=0;i<len;i++){
+        int d = digitValue(s[len-1-i]);   // last character goes into a[0]
+        if(d<0 || d>=radix){
+            printf("invalid digit\n");
+            return 0;
+        }
+        a[i]=d;
+    }
+    count=len;
+
+    for(int i=0;i<count;i++){
+        answer1=powl(radix,i)*a[i];
+        answer2+=answer1;
+    }
+    printf("%.0Lf",answer2);
+}
+    else {printf("error");}
     return 0;
 }
 
